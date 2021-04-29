@@ -1,0 +1,123 @@
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+
+.popup:target .popup-content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    width: 75%;
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all .5s .2s;
+}
+
+.popup-close:link, .popup-close:visited {
+    color: #777;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s;
+    line-height: 1;
+}
+
+.popup-content .popup-text .main_title{
+    margin-bottom: none;
+}
+
+.popup-content .popup-text p{
+    font-size: 16px;
+    color: rgb(46, 44, 44);
+    letter-spacing: .4px;
+    font-family: 'lato';
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+    .popup {
+        /* height: 50vh; */
+        width: 100%;
+        position: fixed
+    }
+}
+
+
+@media (max-width: 540px){
+	.popup {
+        /* height: 100vh; */
+        width: 100%;
+        position: fixed;
+        top: 6rem;
+        left: 0;
+    }
+
+    .popup-close:link, .popup-close:visited {
+        color: #777;
+        position: absolute;
+        top: 2.7rem;
+        right: .8rem;
+    }
+
+    .popup-content .popup-text .main_title h2{
+        margin-bottom: 1px;
+        font-size: 20px;
+    }
+    
+    .popup-content .popup-text p{
+        font-size: 12px;
+        color: rgb(46, 44, 44);
+        letter-spacing: .4px;
+        font-family: 'lato';
+    }
+
+    .popup-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* transform: translate(-50%, -50%); */
+        width: 100%;
+        background-color: #fff;
+    }
+}
+
+@media (max-width: 385px){
+    .popup {
+        /* height: 100vh; */
+        width: 100%;
+        position: fixed;
+        top: 9rem;
+        left: 0;
+    }
+
+    .popup-close:link, .popup-close:visited {
+        color: #777;
+        position: absolute;
+        top: 2.7rem;
+        right: .8rem;
+    }
+}
